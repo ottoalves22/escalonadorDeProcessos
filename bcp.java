@@ -23,4 +23,26 @@ class BCP{
         this.posicao_ultima_instrucao = 0; //ainda nao executou nenhuma instrucao
         this.instrucoes = instrucoes; //instrucoes trazidas dos txt
     }
+
+    public void define_x(int i){
+        this.registrador_x = i;
+    }
+
+    public void define_y(int i){
+        this.registrador_y = i;
+    }
+
+    public void define_estado(int i){
+        if(i > 0 && i < 4){
+            this.estado = 1;
+        }
+    }
+
+    public void define_program_counter(int i){
+        this.program_counter = i;
+    }
+
+    public void define_ultima_instrucao(int i){
+        this.posicao_ultima_instrucao = i;
+    }
 }
