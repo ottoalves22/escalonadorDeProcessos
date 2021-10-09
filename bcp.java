@@ -1,3 +1,4 @@
+package ep;
 /*Classe para Bloco de Controle de Processo
 Havera uma por processo, guardado o "estado atual" do mesmo;
 como registradores X e Y, ultimo comando executado, possivelmente a lista de comandos

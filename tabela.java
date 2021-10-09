@@ -1,3 +1,5 @@
+package ep;
+
 public class TabelaProcessos {
 	SortedList processos_prontos = new SortedList();
 	SortedList processos_bloqueados = new SortedList();	

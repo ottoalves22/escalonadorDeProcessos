@@ -1,14 +1,16 @@
-public class leitorTxt{
+package ep;
+
+public class LeitorTxt{
     int quantum = 0;
     int quantidadeProgramas = 10;
     int numProcesso = 0;
 
-    public void lerArquivos() throws IOException {
-		for(int i = 1; i <= 10; i++){
-            if(i!=10){
+    public void lerArquivos(){
+		for(int i = 1; i <= quantidadeProgramas; i++){
+            if(i<10 && i>=0){
                 FileReader nomeArquivo = new FileReader("enunciado/programas/0"+i+".txt");    
             } else{
-			    FileReader nomeArquivo = new FileReader("src/processos/"+i+".txt");
+			    FileReader nomeArquivo = new FileReader("enunciado/programas/"+i+".txt");
             }
 			this.numProcesso = i-1;
 			
@@ -27,13 +29,14 @@ public class leitorTxt{
             }
             
             buffer.close();
-            BPC processo = new BCP(nome, instrucao, Processo.PRONTO);
+            BPC novoProcesso = new BCP(nome, instrucao, Processo.PRONTO);
+            TabelaProcessos.adicionaProcessoPronto(novoProcesso);
 		}
 	}
 
-    public void lerQuantum () throws NumberFormatException, IOException {
-		BufferedReader br = new BufferedReader(new FileReader(new File("src/programas/quantum.txt")));
-		this.quantum = Integer.parseInt(br.readLine());
-		br.close();
+    public void lerQuantum (){
+		BufferedReader buffer = new BufferedReader(new FileReader(new File("enunciado/programas/quantum.txt")));
+		this.quantum = Integer.parseInt(buffer.readLine());
+		buffer.close();
 	}
 }
