@@ -14,14 +14,14 @@ class BCP{
     int posicao_ultima_instrucao;
     String instrucoes[20];
 
-    BCP(String nome_entrada, instrucoes_entrada){
+    BCP(String nome_entrada, String instrucoes_entrada[]){
         this.nome = nome_entrada;
         this.estado = 1; //processos entram como prontos
         this.registrador_x = 0; //registradores vazios pois do ponto de vista do processo, ainda nao foram utilizados
         this.registrador_y = 0;
         this.program_counter = 0;
         this.posicao_ultima_instrucao = 0; //ainda nao executou nenhuma instrucao
-        this.instrucoes = instrucoes; //instrucoes trazidas dos txt
+        this.instrucoes = instrucoes_entrada; //instrucoes trazidas dos txt
     }
 
     public void define_x(int i){
