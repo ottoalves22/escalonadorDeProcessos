@@ -13,7 +13,7 @@ class BCP{
     int registrador_y;
     int program_counter;
     int posicao_ultima_instrucao;
-    String instrucoes[20];
+    String instrucoes[];
 
     BCP(String nome_entrada, String instrucoes_entrada[]){
         this.nome = nome_entrada;

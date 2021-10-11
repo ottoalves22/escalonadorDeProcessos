@@ -1,5 +1,10 @@
 package ep;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+
+
 public class LeitorTxt{
     int quantum = 0;
     int quantidadeProgramas = 10;
@@ -29,7 +34,7 @@ public class LeitorTxt{
             }
             
             buffer.close();
-            BPC novoProcesso = new BCP(nome, instrucao, Processo.PRONTO);
+            BCP novoProcesso = new BCP(nome, instrucao, 1);
             TabelaProcessos.adicionaProcessoPronto(novoProcesso);
 		}
 	}
