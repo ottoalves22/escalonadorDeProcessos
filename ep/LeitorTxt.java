@@ -1,5 +1,7 @@
 package ep;
 
+import ep.BCP;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -11,11 +13,12 @@ public class LeitorTxt{
     int numProcesso = 0;
 
     public void lerArquivos(){
+        FileReader nomeArquivo;
 		for(int i = 1; i <= quantidadeProgramas; i++){
             if(i<10 && i>=0){
-                FileReader nomeArquivo = new FileReader("enunciado/programas/0"+i+".txt");    
+                nomeArquivo = new FileReader("enunciado/programas/0"+i+".txt");    
             } else{
-			    FileReader nomeArquivo = new FileReader("enunciado/programas/"+i+".txt");
+			    nomeArquivo = new FileReader("enunciado/programas/"+i+".txt");
             }
 			this.numProcesso = i-1;
 			
@@ -34,7 +37,7 @@ public class LeitorTxt{
             }
             
             buffer.close();
-            BCP novoProcesso = new BCP(nome, instrucao, 1);
+            BCP novoProcesso = new BCP(nome, instrucao); //processos ja entram com estado 1
             TabelaProcessos.adicionaProcessoPronto(novoProcesso);
 		}
 	}
