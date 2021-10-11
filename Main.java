@@ -1,4 +1,4 @@
-package ep;
+import ep.*;
 
 public class Main
 {
