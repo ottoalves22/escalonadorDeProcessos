@@ -47,7 +47,7 @@ public class LeitorTxt{
     public void lerQuantum () throws IOException{
 		BufferedReader buffer = new BufferedReader(new FileReader(new File("./enunciado/programas/quantum.txt")));
 		this.quantum = Integer.parseInt(buffer.readLine());
-        System.out.println(this.quantum);
+        //System.out.println(this.quantum);
 		buffer.close();
 	}
 }
