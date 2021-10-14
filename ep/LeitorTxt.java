@@ -5,6 +5,8 @@ import ep.BCP;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
+
 
 
 public class LeitorTxt{
@@ -12,7 +14,7 @@ public class LeitorTxt{
     int quantidadeProgramas = 10;
     int numProcesso = 0;
 
-    public void lerArquivos(){
+    public void lerArquivos() throws IOException{
         FileReader nomeArquivo;
 		for(int i = 1; i <= quantidadeProgramas; i++){
             if(i<10 && i>=0){
@@ -38,13 +40,14 @@ public class LeitorTxt{
             
             buffer.close();
             BCP novoProcesso = new BCP(nome, instrucao); //processos ja entram com estado 1
-            TabelaProcessos.adicionaProcessoPronto(novoProcesso);
+            //TabelaProcessos.adicionaProcessoPronto(novoProcesso);
 		}
 	}
 
-    public void lerQuantum (){
-		BufferedReader buffer = new BufferedReader(new FileReader(new File("enunciado/programas/quantum.txt")));
+    public void lerQuantum () throws IOException{
+		BufferedReader buffer = new BufferedReader(new FileReader(new File("./enunciado/programas/quantum.txt")));
 		this.quantum = Integer.parseInt(buffer.readLine());
+        System.out.println(this.quantum);
 		buffer.close();
 	}
 }
