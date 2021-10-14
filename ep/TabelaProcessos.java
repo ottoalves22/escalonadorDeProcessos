@@ -10,9 +10,9 @@ public class TabelaProcessos {
 	// alterar metodo void inserirOrdenado(BCP processo)
 	public void inserirOrdenado(BCP processo, ArrayList fila_processo){
 		fila_processo.add(processo);
-		Comparable<BCP> cmp = (Comparable<BCP>)processo;
-		for (int i = size() - 1; i > 0 && cmp.compareTo(get(i - 1)) < 0; i--){
-			Collections.swap(this, i, i - 1);
+		Comparable<BCP> cmp = (Comparable<BCP>)processo; //Aqui tem que dar uma mexida boa, tabem parecido com o gitlab
+		for (int i = fila_processo.size() - 1; i > 0 && cmp.compareTo((BCP)fila_processo.get(i - 1)) < 0; i--){
+			Collections.swap(fila_processo, i, i - 1);
 		}
 	}
 
@@ -21,14 +21,14 @@ public class TabelaProcessos {
 	}
 	
 	public void adicionaProcessoBloqueado (BCP bloco) {
-		this.processos_bloqueados.inserirOrdenado(bloco);
+		inserirOrdenado(bloco, processos_bloqueados);
 	}
 	
 	public BCP removePrimeiroPronto() {
-		return this.processos_prontos.remove(0);
+		return (BCP)processos_prontos.remove(0);
 	}
 	
 	public BCP removePrimeiroBloqueado () {
-		return this.processos_bloqueados.remove(0);
+		return (BCP)processos_bloqueados.remove(0);
 	}
 }
