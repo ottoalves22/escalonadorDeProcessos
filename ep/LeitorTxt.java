@@ -14,7 +14,7 @@ public class LeitorTxt{
     int quantidadeProgramas = 10;
     int numProcesso = 0;
 
-    public void lerArquivos() throws IOException{
+    public void lerArquivos(TabelaProcessos tabelaProcessos) throws IOException{
         FileReader nomeArquivo;
 		for(int i = 1; i <= quantidadeProgramas; i++){
             if(i<10 && i>=0){
@@ -42,7 +42,7 @@ public class LeitorTxt{
             System.out.println("\n");
             buffer.close();
             BCP novoProcesso = new BCP(nome, instrucao); //processos ja entram com estado 1
-            //TabelaProcessos.adicionaProcessoPronto(novoProcesso);
+            tabelaProcessos.adicionaProcessoPronto(novoProcesso);
 		}
 	}
 

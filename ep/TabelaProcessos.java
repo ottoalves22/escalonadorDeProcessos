@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class TabelaProcessos {
+public class TabelaProcessos{
 	ArrayList processos_prontos = new ArrayList<BCP>();
 	ArrayList processos_bloqueados = new ArrayList<BCP>();
 
@@ -17,7 +17,7 @@ public class TabelaProcessos {
 	}
 
 	public void adicionaProcessoPronto(BCP bloco) {
-		inserirOrdenado(bloco, processos_prontos);
+		inserirOrdenado(bloco, this.processos_prontos);
 	}
 	
 	public void adicionaProcessoBloqueado (BCP bloco) {
