@@ -6,7 +6,7 @@ advinda do txt respectivo, nome proveniente do txt, estado [pronto, bloqueado, e
 e program_counter (preciso entender melhor esse)
 */
 
-class BCP{
+public class BCP implements Comparable<BCP> {
     String nome;
     int estado; // 1: pronto, 2:executando, 3: bloqueado
     int registrador_x;
@@ -15,7 +15,7 @@ class BCP{
     int posicao_ultima_instrucao;
     String instrucoes[];
 
-    BCP(String nome_entrada, String instrucoes_entrada[]){
+    BCP(String nome_entrada, String instrucoes_entrada[]) {
         this.nome = nome_entrada;
         this.estado = 1; //processos entram como prontos
         this.registrador_x = 0; //registradores vazios pois do ponto de vista do processo, ainda nao foram utilizados
@@ -45,5 +45,15 @@ class BCP{
 
     public void define_ultima_instrucao(int i){
         this.posicao_ultima_instrucao = i;
+    }
+
+    public int getEstado() {
+        return this.estado;
+    }
+
+    @Override
+    public int compareTo(BCP bcp) {
+
+        return 0;
     }
 }
