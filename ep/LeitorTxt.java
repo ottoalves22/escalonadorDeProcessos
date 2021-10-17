@@ -10,9 +10,8 @@ import java.io.IOException;
 public class LeitorTxt{
     public int quantidadeProgramas = 10;
     public int numProcesso = 0;
-    Logger logger = new Logger();
 
-    public void lerArquivos(TabelaProcessos tabelaProcessos) throws IOException{
+    public void lerArquivos(TabelaProcessos tabelaProcessos, Logger logger) throws IOException{
         FileReader nomeArquivo;
 		for(int i = 1; i <= quantidadeProgramas; i++){
             if(i<10 && i>=0)
@@ -38,15 +37,15 @@ public class LeitorTxt{
             //System.out.println("\n");
             buffer.close();
             BCP novoProcesso = new BCP(nome, instrucao); //processos ja entram com estado 1
-            this.logger.escreve(nome);
+            logger.entra(nome);
             tabelaProcessos.adicionaProcessoPronto(novoProcesso);
 		}
 	}
 
-    public short lerQuantum () throws IOException{
+    public short lerQuantum (Logger logger) throws IOException{
         BufferedReader buffer = new BufferedReader(new FileReader(new File("./enunciado/programas/quantum.txt")));
 		short quantum = Short.parseShort(buffer.readLine());
-        this.logger.criaLog(quantum);
+        logger.criaLog(quantum);
         buffer.close();
 
         return quantum;

@@ -25,7 +25,7 @@ public class Logger{
             e.printStackTrace();
         }  
     }
-    public void escreve(String entrada){
+    public void entra(String entrada){
         try {
             FileWriter escritor = new FileWriter(this.nome_log, true);
             escritor.write(entrada);
@@ -36,4 +36,54 @@ public class Logger{
             e.printStackTrace();
         }
     }
+
+    public void interrompe(String nome, int instrucoes){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write("Interrompendo "+nome+" apos "+instrucoes+" instrucoes");
+            escritor.write("\n");
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
+
+    public void executa(String nome){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write("Executando "+nome);
+            escritor.write("\n");
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
+
+    public void entradaSaida(String nome){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write("E/S iniciada em "+nome);
+            escritor.write("\n");
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
+
+    public void terminou(String nome, int x, int y){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write(nome+" terminado. X="+x+". Y="+y);
+            escritor.write("\n");
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
+
+    //FALTA IMPLEMENTAR AS ESTATISTICAS FINAIS MAS FICA PARA DEPOIS
 }
