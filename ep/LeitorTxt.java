@@ -42,9 +42,11 @@ public class LeitorTxt{
 	}
 
     public short lerQuantum () throws IOException{
-		BufferedReader buffer = new BufferedReader(new FileReader(new File("./enunciado/programas/quantum.txt")));
+        Logger logger = new Logger();
+        BufferedReader buffer = new BufferedReader(new FileReader(new File("./enunciado/programas/quantum.txt")));
 		short quantum = Short.parseShort(buffer.readLine());
-		buffer.close();
+        logger.criaLog(quantum);
+        buffer.close();
 
         return quantum;
 	}
