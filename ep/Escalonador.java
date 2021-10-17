@@ -25,7 +25,6 @@ public class Escalonador {
 
 			for(short c = 0; c < quantum; c++){
 				String comando = processoAtual.instrucoes[c];
-				System.out.println(comando);
 				if (comando.equals("E/S")) {
 					logger.entradaSaida(processoAtual.nome);
 					processoAtual.define_estado(3); // quando dispara um comando de entrada e saida, o processo é bloqueado
@@ -41,8 +40,9 @@ public class Escalonador {
 					processoAtual.define_y(Integer.parseInt(String.valueOf(comando.charAt(2))));
 				}
 				if (comando.equals("SAIDA")) {
+					//nao ta entrando nesse if
 					logger.terminou(processoAtual.nome, processoAtual.registrador_x, processoAtual.registrador_y);
-					System.out.println("SAIDADADADA");
+					System.out.println("processoAtual.registrador_x");
 				}
 
 				if(tabelaProcessos.processos_prontos.size() == 0 && tabelaProcessos.processos_bloqueados.size() == 0)
