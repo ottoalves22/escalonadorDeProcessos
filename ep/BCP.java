@@ -14,6 +14,8 @@ public class BCP {
     int program_counter;
     int posicao_ultima_instrucao;
     String instrucoes[];
+    int tempoDeEspera;
+    boolean finalizado;
 
     BCP(String nome_entrada, String instrucoes_entrada[]) {
         this.nome = nome_entrada;
@@ -23,20 +25,34 @@ public class BCP {
         this.program_counter = 0;
         this.posicao_ultima_instrucao = 0; //ainda nao executou nenhuma instrucao
         this.instrucoes = instrucoes_entrada; //instrucoes trazidas dos txt
+        this.tempoDeEspera = 0;
+        this.finalizado = false;
     }
 
-    public void define_x(int i){
+    public void setRegistrador_x(int i){
         this.registrador_x = i;
     }
 
-    public void define_y(int i){
+    public void setRegistrador_y(int i){
         this.registrador_y = i;
     }
 
-    public void define_estado(int i){
+    public void setEstado(int i){
         if(i > 0 && i < 4){
-            this.estado = 1;
+            this.estado = i;
         }
+    }
+
+    public void setTempoDeEspera(int i) {
+        this.tempoDeEspera = i;
+    }
+
+    public int getTempoDeEspera(){
+        return this.tempoDeEspera;
+    }
+
+    public void setFinalizado() {
+        this.finalizado = true;
     }
 
     public void define_program_counter(int i){

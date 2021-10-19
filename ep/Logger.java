@@ -7,7 +7,9 @@ import java.nio.file.Paths;
 
 
 public class Logger{
+
     String nome_log = "";
+
     public void criaLog(short id){
         try{
             String name;
