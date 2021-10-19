@@ -18,7 +18,7 @@ public class Escalonador {
 			ex.printStackTrace();
 		}
 		short quantidadeInstrucoes = 0;
-		while(tabelaProcessos.processos_prontos.size() != 0) {
+		while(tabelaProcessos.processos_prontos.size() >= 1) {
 			BCP processoAtual = (BCP) tabelaProcessos.processos_prontos.remove(0); // faz um pop do primeiro pronto, como é uma função simples e pouco custosa acho que não precisa definir na tabela de processos
 			processoAtual.define_estado(2); // executa o processo
 			logger.executa(processoAtual.nome);
@@ -26,11 +26,12 @@ public class Escalonador {
 			for(short c = 0; c < quantum; c++){
 				String comando = processoAtual.instrucoes[c];
 				if (comando.equals("E/S")) {
+					//aqui ta usando uma flag atual.flag pra indicar se ja esperou e ja executou a E/S. Da pra arrumar isso alterando a posicao da instrucao?
 					logger.entradaSaida(processoAtual.nome);
 					processoAtual.define_estado(3); // quando dispara um comando de entrada e saida, o processo é bloqueado
 					logger.interrompe(processoAtual.nome, c);
 					tabelaProcessos.adicionaProcessoBloqueado(processoAtual);
-					System.out.println("entradassaidad");
+					break;
 
 				}
 				if(comando.contains("X=")) {
@@ -44,6 +45,7 @@ public class Escalonador {
 
 					logger.terminou(processoAtual.nome, processoAtual.registrador_x, processoAtual.registrador_y);
 					System.out.println("processoAtual.registrador_x");
+					break;
 				}
 
 				if(tabelaProcessos.processos_prontos.size() == 0 && tabelaProcessos.processos_bloqueados.size() == 0)
