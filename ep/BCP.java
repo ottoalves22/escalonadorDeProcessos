@@ -6,7 +6,7 @@ advinda do txt respectivo, nome proveniente do txt, estado [pronto, bloqueado, e
 e program_counter (preciso entender melhor esse)
 */
 
-public class BCP implements Comparable<BCP> {
+public class BCP {
     String nome;
     int estado; // 1: pronto, 2:executando, 3: bloqueado
     int registrador_x;
@@ -51,9 +51,4 @@ public class BCP implements Comparable<BCP> {
         return this.estado;
     }
 
-    @Override
-    public int compareTo(BCP bcp) {
-
-        return 0;
-    }
 }

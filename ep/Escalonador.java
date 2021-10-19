@@ -41,6 +41,7 @@ public class Escalonador {
 				}
 				if (comando.equals("SAIDA")) {
 					//nao ta entrando nesse if
+
 					logger.terminou(processoAtual.nome, processoAtual.registrador_x, processoAtual.registrador_y);
 					System.out.println("processoAtual.registrador_x");
 				}
