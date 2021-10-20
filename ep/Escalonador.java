@@ -34,6 +34,7 @@ public class Escalonador {
 					tabelaProcessos.adicionaProcessoBloqueado(processoAtual);
 					processoAtual.setTempoDeEspera(3);
 					interrompido = true;
+					break;
 				}
 				if (comando.contains("X=")) {
 					processoAtual.setRegistrador_x(Integer.parseInt(String.valueOf(comando.charAt(2))));
@@ -48,19 +49,21 @@ public class Escalonador {
 				}
 
 				quantidadeInstrucoes++;
-			}
 
-			for (BCP p : tabelaProcessos.processos_bloqueados)
-				p.setTempoDeEspera(p.getTempoDeEspera() - 1);
+				if(interrompido) {
+					//processo interrompido
+				}
 
-			for(BCP p : tabelaProcessos.processos_bloqueados){
-				if(p.tempoDeEspera == 0){
-					p.setEstado(1);
-					tabelaProcessos.adicionaProcessoPronto(p);
+				for (BCP p : tabelaProcessos.processos_bloqueados)
+					p.setTempoDeEspera(p.getTempoDeEspera() - 1);
+
+				for(BCP p : tabelaProcessos.processos_bloqueados){
+					if(p.tempoDeEspera == 0){
+						p.setEstado(1);
+						tabelaProcessos.adicionaProcessoPronto(p);
+					}
 				}
 			}
-			if(interrompido) {}
-			if(processoAtual.finalizado){}
 
 		}
 	}
