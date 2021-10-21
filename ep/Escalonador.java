@@ -54,8 +54,6 @@ public class Escalonador {
 
 
 				if(interrompido) {
-					contador_interrompidos++;
-					contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 					//processo interrompido
 				}
 
@@ -69,6 +67,8 @@ public class Escalonador {
 					}
 				}
 			}
+			contador_interrompidos++;
+			contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 
 		}
 
