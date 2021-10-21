@@ -10,13 +10,15 @@ public class Escalonador {
 		TabelaProcessos tabelaProcessos = new TabelaProcessos();
 		LeitorTxt leitor_txt = new LeitorTxt();
 		Logger logger = new Logger();
-
+		int contador_interrompidos = 0; // da pra botar SHORT nesses INT!
+		int contador_instrucaoQuantum = 0;
 		try {
 			quantum = leitor_txt.lerQuantum(logger);
 			leitor_txt.lerArquivos(tabelaProcessos, logger);
 		} catch(IOException ex) {
 			ex.printStackTrace();
 		}
+		int quantidade_processos = tabelaProcessos.processos_prontos.size();
 		while(tabelaProcessos.processos_prontos.size() > 0) {
 			BCP processoAtual = (BCP) tabelaProcessos.processos_prontos.remove(0); // faz um pop do primeiro pronto, como é uma função simples e pouco custosa acho que não precisa definir na tabela de processos
 			processoAtual.setEstado(2); // executa o processo
@@ -50,7 +52,10 @@ public class Escalonador {
 
 				quantidadeInstrucoes++;
 
+
 				if(interrompido) {
+					contador_interrompidos++;
+					contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 					//processo interrompido
 				}
 
@@ -66,5 +71,10 @@ public class Escalonador {
 			}
 
 		}
+
+		//aqui vem as estatisticas
+		logger.logaMediaTrocas(contador_interrompidos, quantidade_processos);
+		logger.logaMediaInstrucoes(contador_instrucaoQuantum, quantum);
+		logger.logaQuantum(quantum);
 	}
 }

@@ -87,5 +87,39 @@ public class Logger{
         }
     }
 
+    public void logaMediaTrocas(int num_interrupcoes, int num_procesos){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write("Media de trocas: "+(num_interrupcoes/num_procesos));
+            escritor.write("\n");
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
+
+    public void logaMediaInstrucoes(int instrucaoQuantum, int quantum){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write("Media de instrucoes: "+(instrucaoQuantum/quantum));
+            escritor.write("\n");
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
+
+    public void logaQuantum(int quantum){
+        try {
+            FileWriter escritor = new FileWriter(this.nome_log, true);
+            escritor.write("Quantum: "+quantum);
+            escritor.close();
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo");
+            e.printStackTrace();
+        }
+    }
     //FALTA IMPLEMENTAR AS ESTATISTICAS FINAIS MAS FICA PARA DEPOIS
 }
