@@ -13,11 +13,11 @@ public class BCP {
     int registrador_y;
     int program_counter;
     int posicao_ultima_instrucao;
-    String instrucoes[];
+    String[] instrucoes;
     int tempoDeEspera;
     boolean finalizado;
 
-    BCP(String nome_entrada, String instrucoes_entrada[]) {
+    BCP(String nome_entrada, String[] instrucoes_entrada) {
         this.nome = nome_entrada;
         this.estado = 1; //processos entram como prontos
         this.registrador_x = 0; //registradores vazios pois do ponto de vista do processo, ainda nao foram utilizados

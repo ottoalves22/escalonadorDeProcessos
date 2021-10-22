@@ -38,7 +38,9 @@ Interrompendo TESTE-5 apos 1 instrucoes
 Executando TESTE-9
 E/S iniciada em TESTE-9
 Interrompendo TESTE-9 apos 2 instrucoes
-TESTE-1
+Media de trocas: 1
+Media de instrucoes: 9
+Quantum: 3TESTE-1
 TESTE-2
 TESTE-3
 TESTE-4
@@ -78,58 +80,9 @@ Interrompendo TESTE-5 apos 1 instrucoes
 Executando TESTE-9
 E/S iniciada em TESTE-9
 Interrompendo TESTE-9 apos 2 instrucoes
-TESTE-1
-TESTE-2
-TESTE-3
-TESTE-4
-TESTE-5
-TESTE-6
-TESTE-7
-TESTE-8
-TESTE-9
-TESTE-10
-Executando TESTE-1
-TESTE-1
-TESTE-2
-TESTE-3
-TESTE-4
-TESTE-5
-TESTE-6
-TESTE-7
-TESTE-8
-TESTE-9
-TESTE-10
-Executando TESTE-1
-E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
-Executando TESTE-2
-Executando TESTE-3
-Executando TESTE-4
-E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
-Executando TESTE-5
-E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
-Executando TESTE-6
-Executando TESTE-7
-Executando TESTE-8
-Executando TESTE-9
-E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
-Executando TESTE-10
-Executando TESTE-1
-E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
-Executando TESTE-4
-E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
-Executando TESTE-5
-E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
-Executando TESTE-9
-E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
-TESTE-1
+Media de trocas: 1
+Media de instrucoes: 9
+Quantum: 3TESTE-1
 TESTE-2
 TESTE-3
 TESTE-4
@@ -169,6 +122,184 @@ Interrompendo TESTE-5 apos 1 instrucoes
 Executando TESTE-9
 E/S iniciada em TESTE-9
 Interrompendo TESTE-9 apos 2 instrucoes
+Media de trocas: 1
+Media de instrucoes: 9
+Quantum: 3TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
+TESTE-1
+TESTE-2
+TESTE-3
+TESTE-4
+TESTE-5
+TESTE-6
+TESTE-7
+TESTE-8
+TESTE-9
+TESTE-10
+Executando TESTE-1
+E/S iniciada em TESTE-1
+Interrompendo TESTE-1 apos 1 instrucoes
+Executando TESTE-2
 TESTE-1
 TESTE-2
 TESTE-3
@@ -199,93 +330,16 @@ Interrompendo TESTE-9 apos 2 instrucoes
 Executando TESTE-10
 Executando TESTE-1
 E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
+Interrompendo TESTE-1 apos 0 instrucoes
 Executando TESTE-4
 E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
+Interrompendo TESTE-4 apos 0 instrucoes
 Executando TESTE-5
 E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
+Interrompendo TESTE-5 apos 0 instrucoes
 Executando TESTE-9
 E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
-TESTE-1
-TESTE-2
-TESTE-3
-TESTE-4
-TESTE-5
-TESTE-6
-TESTE-7
-TESTE-8
-TESTE-9
-TESTE-10
-Executando TESTE-1
-E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
-Executando TESTE-2
-Executando TESTE-3
-Executando TESTE-4
-E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
-Executando TESTE-5
-E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
-Executando TESTE-6
-Executando TESTE-7
-Executando TESTE-8
-Executando TESTE-9
-E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
-Executando TESTE-10
-Executando TESTE-1
-E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
-Executando TESTE-4
-E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
-Executando TESTE-5
-E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
-Executando TESTE-9
-E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
-TESTE-1
-TESTE-2
-TESTE-3
-TESTE-4
-TESTE-5
-TESTE-6
-TESTE-7
-TESTE-8
-TESTE-9
-TESTE-10
-Executando TESTE-1
-E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
-Executando TESTE-2
-Executando TESTE-3
-Executando TESTE-4
-E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
-Executando TESTE-5
-E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
-Executando TESTE-6
-Executando TESTE-7
-Executando TESTE-8
-Executando TESTE-9
-E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
-Executando TESTE-10
-Executando TESTE-1
-E/S iniciada em TESTE-1
-Interrompendo TESTE-1 apos 1 instrucoes
-Executando TESTE-4
-E/S iniciada em TESTE-4
-Interrompendo TESTE-4 apos 1 instrucoes
-Executando TESTE-5
-E/S iniciada em TESTE-5
-Interrompendo TESTE-5 apos 1 instrucoes
-Executando TESTE-9
-E/S iniciada em TESTE-9
-Interrompendo TESTE-9 apos 2 instrucoes
+Interrompendo TESTE-9 apos 0 instrucoes
+Media de trocas: 1
+Media de instrucoes: 7
+Quantum: 3

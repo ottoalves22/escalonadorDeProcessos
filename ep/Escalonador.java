@@ -1,6 +1,8 @@
 package ep;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Escalonador {
 
@@ -27,7 +29,7 @@ public class Escalonador {
 			short quantidadeInstrucoes = 0;
 			boolean interrompido = false;
 			while(quantidadeInstrucoes < quantum) {
-				String comando = processoAtual.instrucoes[quantidadeInstrucoes];
+				String comando = processoAtual.instrucoes[processoAtual.program_counter];
 				if (comando.equals("E/S")) {
 					//aqui ta usando uma flag atual.flag pra indicar se ja esperou e ja executou a E/S. Da pra arrumar isso alterando a posicao da instrucao?
 					logger.entradaSaida(processoAtual.nome);
@@ -46,27 +48,40 @@ public class Escalonador {
 				}
 				if (comando.equals("SAIDA")) {
 					logger.terminou(processoAtual.nome, processoAtual.registrador_x, processoAtual.registrador_y);
-					System.out.println("processoAtual.registrador_x");
-					processoAtual.setFinalizado();
+					tabelaProcessos.processos_prontos.remove(processoAtual);
+				}
+
+				processoAtual.program_counter++;
+
+				if(tabelaProcessos.processos_bloqueados.size() > 0) {
+					for (BCP p : tabelaProcessos.processos_bloqueados)
+						p.setTempoDeEspera(p.getTempoDeEspera() - 1);
+
+					ArrayList<BCP> fila_temp = new ArrayList<>();
+					for (BCP k : tabelaProcessos.processos_bloqueados) {
+						if (k.tempoDeEspera == 0) {
+							k.setEstado(1);
+							fila_temp.add(k);
+							tabelaProcessos.processos_prontos.add(k);
+						}
+					}
+
+					if(fila_temp.size() > 0) {
+						for (BCP o : fila_temp)
+							tabelaProcessos.processos_bloqueados.remove(o);
+					}
 				}
 
 				quantidadeInstrucoes++;
-
-
-				if(interrompido) {
-					//processo interrompido
-				}
-
-				for (BCP p : tabelaProcessos.processos_bloqueados)
-					p.setTempoDeEspera(p.getTempoDeEspera() - 1);
-
-				for(BCP p : tabelaProcessos.processos_bloqueados){
-					if(p.tempoDeEspera == 0){
-						p.setEstado(1);
-						tabelaProcessos.adicionaProcessoPronto(p);
-					}
-				}
 			}
+
+			if(interrompido) {
+				System.out.println("Interrompendo " + processoAtual.nome + " após " + quantidadeInstrucoes);
+			} else {
+				processoAtual.setEstado(1);
+				tabelaProcessos.adicionaProcessoPronto(processoAtual);
+			}
+
 			contador_interrompidos++;
 			contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 
