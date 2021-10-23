@@ -25,6 +25,7 @@ public class Escalonador2 {
 			BCP processoAtual = (BCP) tabelaProcessos.processos_prontos.remove(0); // faz um pop do primeiro pronto, como é uma função simples e pouco custosa acho que não precisa definir na tabela de processos
 			processoAtual.setEstado(2); // executa o processo
 			logger.executa(processoAtual.nome);
+			System.out.println("Executando " + processoAtual.nome);
 
 			short quantidadeInstrucoes = 0;
 			boolean interrompido = false;
@@ -32,6 +33,7 @@ public class Escalonador2 {
 				String comando = processoAtual.instrucoes[processoAtual.program_counter];
 				if (comando.equals("E/S")) {
 					//aqui ta usando uma flag atual.flag pra indicar se ja esperou e ja executou a E/S. Da pra arrumar isso alterando a posicao da instrucao?
+					System.out.println("E/S iniciada em " + processoAtual.nome);
 					logger.entradaSaida(processoAtual.nome);
 					processoAtual.setEstado(3); // quando dispara um comando de entrada e saida, o processo é bloqueado
 					logger.interrompe(processoAtual.nome, quantidadeInstrucoes);
@@ -48,8 +50,8 @@ public class Escalonador2 {
 				}
 				if (comando.equals("SAIDA")) {
 					logger.terminou(processoAtual.nome, processoAtual.registrador_x, processoAtual.registrador_y);
+					System.out.println(processoAtual.nome + " terminado. X=" + processoAtual.registrador_x + ". Y=" + processoAtual.registrador_y);
 					processoAtual.setFinalizado();
-					//tabelaProcessos.processos_prontos.remove(processoAtual);
 				}
 
 				quantidadeInstrucoes++;
@@ -84,12 +86,12 @@ public class Escalonador2 {
 
 			if(interrompido) {
 				System.out.println("Interrompendo " + processoAtual.nome + " após " + quantidadeInstrucoes);
+			} else if(processoAtual.finalizado) {
+				processoAtual = null;
 			} else {
 				processoAtual.setEstado(1);
 				tabelaProcessos.adicionaProcessoPronto(processoAtual);
 			}
-
-
 		}
 
 		//aqui vem as estatisticas
