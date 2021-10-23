@@ -38,12 +38,12 @@ public class Escalonador2 {
 					tabelaProcessos.adicionaProcessoBloqueado(processoAtual);
 					processoAtual.setTempoDeEspera(3);
 					interrompido = true;
-					break;
+					//break;
 				}
 				if (comando.contains("X=")) {
 					processoAtual.setRegistrador_x(Integer.parseInt(String.valueOf(comando.charAt(2))));
 				}
-				if (comando.equals("Y=")) {
+				if (comando.contains("Y=")) {
 					processoAtual.setRegistrador_y(Integer.parseInt(String.valueOf(comando.charAt(2))));
 				}
 				if (comando.equals("SAIDA")) {
@@ -52,6 +52,7 @@ public class Escalonador2 {
 					//tabelaProcessos.processos_prontos.remove(processoAtual);
 				}
 
+				quantidadeInstrucoes++;
 				processoAtual.program_counter++;
 
 				if(tabelaProcessos.processos_bloqueados.size() > 0) {
@@ -73,12 +74,11 @@ public class Escalonador2 {
 					}
 				}
 
-				if(processoAtual.finalizado){
+				if(processoAtual.finalizado || interrompido){
 					break;
 				}
 			}
 
-			//quantidadeInstrucoes++;
 			contador_interrompidos++;
 			contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 
