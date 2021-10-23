@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Escalonador {
+public class Escalonador2 {
 
 	private static short quantum;
 
@@ -15,8 +15,8 @@ public class Escalonador {
 		int contador_interrompidos = 0; // da pra botar SHORT nesses INT!
 		int contador_instrucaoQuantum = 0;
 		try {
-			quantum = leitor_txt.lerQuantum(logger);
-			leitor_txt.lerArquivos(tabelaProcessos, logger);
+			quantum = leitor_txt.lerTxtQuantum(logger);
+			leitor_txt.lerTxtProcesso(tabelaProcessos, logger);
 		} catch(IOException ex) {
 			ex.printStackTrace();
 		}
@@ -78,7 +78,7 @@ public class Escalonador {
 				}
 			}
 
-			quantidadeInstrucoes++;
+			//quantidadeInstrucoes++;
 			contador_interrompidos++;
 			contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 

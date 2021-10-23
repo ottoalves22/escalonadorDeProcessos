@@ -9,16 +9,16 @@ import java.io.IOException;
 
 public class LeitorTxt{
     public int quantidadeProgramas = 10;
-    public int numProcesso = 0;
+    public int nProcessos = 0;
 
-    public void lerArquivos(TabelaProcessos tabelaProcessos, Logger logger) throws IOException{
+    public void lerTxtProcesso(TabelaProcessos tabelaProcessos, Logger logger) throws IOException{
         FileReader nomeArquivo;
 		for(int i = 1; i <= quantidadeProgramas; i++){
             if(i<10 && i>=0)
                 nomeArquivo = new FileReader("enunciado/programas/0"+i+".txt");    
             else
 			    nomeArquivo = new FileReader("enunciado/programas/"+i+".txt");
-			this.numProcesso = i-1;
+			nProcessos = i-1;
 
             BufferedReader buffer = new BufferedReader(nomeArquivo);
             String[] instrucao = new String[21];
@@ -26,13 +26,9 @@ public class LeitorTxt{
             //System.out.println(nome);
             int contador = 0;
             String aux = null;
-            while (!"SAIDA".equals(aux) && contador<21) {
-                aux = buffer.readLine();
-                if (aux != null) {
-                    instrucao[contador] = aux;
-                    //System.out.println(aux);
-                    contador++;
-                }
+            while ((aux = buffer.readLine()) != null && contador<21) {
+                instrucao[contador] = aux;
+                contador++;
             }
             //System.out.println("\n");
             buffer.close();
@@ -42,7 +38,7 @@ public class LeitorTxt{
 		}
 	}
 
-    public short lerQuantum (Logger logger) throws IOException{
+    public short lerTxtQuantum (Logger logger) throws IOException{
         BufferedReader buffer = new BufferedReader(new FileReader(new File("./enunciado/programas/quantum.txt")));
 		short quantum = Short.parseShort(buffer.readLine());
         logger.criaLog(quantum);
