@@ -121,5 +121,4 @@ public class Logger{
             e.printStackTrace();
         }
     }
-    //FALTA IMPLEMENTAR AS ESTATISTICAS FINAIS MAS FICA PARA DEPOIS
 }

@@ -23,14 +23,12 @@ public class LeitorTxt{
             BufferedReader buffer = new BufferedReader(nomeArquivo);
             String[] instrucao = new String[21];
             String nome = buffer.readLine();
-            //System.out.println(nome);
             int contador = 0;
             String aux = null;
             while ((aux = buffer.readLine()) != null && contador<21) {
                 instrucao[contador] = aux;
                 contador++;
             }
-            //System.out.println("\n");
             buffer.close();
             BCP novoProcesso = new BCP(nome, instrucao); //processos ja entram com estado 1
             logger.entra(nome);

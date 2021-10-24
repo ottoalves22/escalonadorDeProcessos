@@ -22,7 +22,12 @@ public class Escalonador2 {
 		}
 		int quantidade_processos = tabelaProcessos.processos_prontos.size();
 		while(tabelaProcessos.processos_prontos.size() > 0 || tabelaProcessos.processos_bloqueados.size() > 0) {
-			BCP processoAtual = (BCP) tabelaProcessos.processos_prontos.remove(0); // faz um pop do primeiro pronto, como é uma função simples e pouco custosa acho que não precisa definir na tabela de processos
+			BCP processoAtual;
+			if(tabelaProcessos.processos_prontos.size() == 0){
+				processoAtual = (BCP) tabelaProcessos.processos_bloqueados.remove(0);
+			} else {
+				processoAtual = (BCP) tabelaProcessos.processos_prontos.remove(0);
+			}
 			processoAtual.setEstado(2); // executa o processo
 			logger.executa(processoAtual.nome);
 			System.out.println("Executando " + processoAtual.nome);
@@ -32,7 +37,6 @@ public class Escalonador2 {
 			while(quantidadeInstrucoes < quantum) {
 				String comando = processoAtual.instrucoes[processoAtual.program_counter];
 				if (comando.equals("E/S")) {
-					//aqui ta usando uma flag atual.flag pra indicar se ja esperou e ja executou a E/S. Da pra arrumar isso alterando a posicao da instrucao?
 					System.out.println("E/S iniciada em " + processoAtual.nome);
 					logger.entradaSaida(processoAtual.nome);
 					processoAtual.setEstado(3); // quando dispara um comando de entrada e saida, o processo é bloqueado
@@ -40,7 +44,6 @@ public class Escalonador2 {
 					tabelaProcessos.adicionaProcessoBloqueado(processoAtual);
 					processoAtual.setTempoDeEspera(3);
 					interrompido = true;
-					//break;
 				}
 				if (comando.contains("X=")) {
 					processoAtual.setRegistrador_x(Integer.parseInt(String.valueOf(comando.charAt(2))));
