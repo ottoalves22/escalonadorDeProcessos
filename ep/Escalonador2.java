@@ -14,6 +14,7 @@ public class Escalonador2 {
 		Logger logger = new Logger();
 		int contador_interrompidos = 0; // da pra botar SHORT nesses INT!
 		int contador_instrucaoQuantum = 0;
+		int contador_quantum = 0;
 		try {
 			quantum = leitor_txt.lerTxtQuantum(logger);
 			leitor_txt.lerTxtProcesso(tabelaProcessos, logger);
@@ -57,8 +58,10 @@ public class Escalonador2 {
 					processoAtual.setFinalizado();
 				}
 
+				contador_quantum++;
 				quantidadeInstrucoes++;
 				processoAtual.program_counter++;
+				contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 
 				if(tabelaProcessos.processos_bloqueados.size() > 0) {
 					for (BCP p : tabelaProcessos.processos_bloqueados)
@@ -85,7 +88,6 @@ public class Escalonador2 {
 			}
 
 			contador_interrompidos++;
-			contador_instrucaoQuantum = contador_instrucaoQuantum + quantidadeInstrucoes;
 
 			if(interrompido) {
 				System.out.println("Interrompendo " + processoAtual.nome + " após " + quantidadeInstrucoes);
@@ -99,7 +101,7 @@ public class Escalonador2 {
 
 		//aqui vem as estatisticas
 		logger.logaMediaTrocas(contador_interrompidos, quantidade_processos);
-		logger.logaMediaInstrucoes(contador_instrucaoQuantum, quantum);
+		logger.logaMediaInstrucoes(contador_instrucaoQuantum, contador_quantum);
 		logger.logaQuantum(quantum);
 	}
 }

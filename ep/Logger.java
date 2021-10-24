@@ -87,7 +87,7 @@ public class Logger{
         }
     }
 
-    public void logaMediaTrocas(int num_interrupcoes, int num_procesos){
+    public void logaMediaTrocas(double num_interrupcoes, double num_procesos){
         try {
             FileWriter escritor = new FileWriter(this.nome_log, true);
             escritor.write("Media de trocas: "+(num_interrupcoes/num_procesos));
@@ -99,7 +99,7 @@ public class Logger{
         }
     }
 
-    public void logaMediaInstrucoes(int instrucaoQuantum, int quantum){
+    public void logaMediaInstrucoes(double instrucaoQuantum, double quantum){
         try {
             FileWriter escritor = new FileWriter(this.nome_log, true);
             escritor.write("Media de instrucoes: "+(instrucaoQuantum/quantum));
